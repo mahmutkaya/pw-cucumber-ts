@@ -1,0 +1,36 @@
+{
+  "root": "apps/author-profile-page-control-e2e",
+  "projectType": "application",
+  "sourceRoot": "apps/author-profile-page-control-e2e",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "mkdir -p ../../dist/apps/e2e",
+            "forwardAllArgs": false
+          },
+          "npx cucumber-js --require-module ts-node/register --require-module tsconfig-paths/register --parallel 2 --format json:../../dist/apps/e2e/author-profile-page-control-e2e-report.json --tags '${npm_config_tags:-@authorProfilePageControl}' --retry 1"
+        ],
+        "cwd": "apps/author-profile-page-control-e2e",
+        "parallel": false
+      }
+    },
+    "e2e-remote": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "mkdir -p ../../dist/apps/e2e",
+            "forwardAllArgs": false
+          },
+          "SELENIUM_REMOTE_URL=http://selenium-hub.nonprod.scopus.com/ npx cucumber-js --require-module ts-node/register --require-module tsconfig-paths/register --parallel 2 --format json:../../dist/apps/e2e/author-profile-page-control-e2e-report.json --tags '${npm_config_tags:-@authorProfilePageControl}' --retry 1"
+        ],
+        "cwd": "apps/author-profile-page-control-e2e",
+        "parallel": false
+      }
+    }
+  },
+  "implicitDependencies": ["author-profile-page-control"]
+}
