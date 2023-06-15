@@ -11,8 +11,8 @@ import { chromium, firefox, webkit, LaunchOptions } from "@playwright/test";
 
 const options: LaunchOptions = {
   args: ["--remote-allow-origins=*"],
-  headless: false,
-  slowMo: 100,
+  headless: true,
+  slowMo: 0,
 };
 
 BeforeAll(async () => {
