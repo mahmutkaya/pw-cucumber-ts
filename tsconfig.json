@@ -1,0 +1,18 @@
+{
+    "ts-node": {
+        "files": true
+    },
+    "compilerOptions": {
+        "declarationMap": false,
+        "rootDir": ".",
+        "sourceMap": true,
+        "declaration": false,
+        "moduleResolution": "node",
+        "target": "ESNext",
+        "module": "commonjs",
+        "allowJs": true,
+        "typeRoots": ["node_modules/@types", "node_modules/@cucumber/cucumber/api", "./@types"]
+    },
+    "include": ["./@types/", "./steps/", "./support/"],
+    "compileOnSave": false,
+}
